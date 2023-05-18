@@ -1,33 +1,34 @@
 import * as React from "react";
 import { Text, StyleSheet, View, Image, Pressable } from "react-native";
-import FrameComponent from "../components/FrameComponent.js";
 import { FontSize, FontFamily, Color, Borders } from "../GlobalStyles.js";
 import { useNavigation } from "@react-navigation/native";
 
 
 
-const SpalshScreen = () => {
+
+const spalshScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.spalshScreen}>
-      <FrameComponent/>
       <View style={styles.createYourAccountToPlanYoParent}>
         <Text style={styles.createYourAccount}>
-          Create your account to plan your trip
+          Jelajahi Berbagai Keindahahan Alam Indonesia
         </Text>
         <Text style={styles.asdasdasdasdasdadasdadsadsadas}>
-          asdasdasdasdasdadasdadsadsadasdadadadad
+           Anda bisa mengunjungi berbagai keindahan alam         
         </Text>
       </View>
       <Image
         style={styles.spalshScreenChild}
         resizeMode="cover"
-        source={require("../assets/splash-screen.png")}
+        source={require("../assets/splash.png")}
       />
       <Pressable
         style={[styles.registerWrapper, styles.wrapperSpaceBlock]}
-        onPress={() => useNavigation.navigate("Register")}
+        onPress={() => navigation.navigate("Registerr")}
       >
-        <Text style={[styles.register, styles.loginNowTypo]}>Register</Text>
+        <Text style={[styles.register, styles.loginNowTypo]}>Mulai Jelajahi</Text>
       </Pressable>
     </View>
   );
@@ -81,6 +82,9 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   registerWrapper: {
+    top : 650,
+    left: 30,
+    borderRadius: 10,
     backgroundColor: Color.darkslategray_100,
     shadowColor: "rgba(46, 142, 255, 0.2)",
     height: 55,
@@ -101,4 +105,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SpalshScreen;
+
+export default spalshScreen;

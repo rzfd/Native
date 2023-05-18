@@ -16,7 +16,6 @@ import SpalshScreen from "./screen/splashScreen";
 // import TrackPhotoDetail from "./screens/TrackPhotoDetail";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(false);
@@ -54,12 +53,12 @@ const App = () => {
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="Register"
+              name="Registerr"
               component={Register}
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="SpalshScreen"
+              name="SplashScreen"
               component={SpalshScreen}
               options={{ headerShown: false }}
             />
