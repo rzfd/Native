@@ -3,59 +3,36 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet, Pressable, SafeAre
 import { useNavigation } from "@react-navigation/native";
 import { Color, Padding, FontFamily, FontSize, Border } from "../GlobalStyles";
 
-const Register = () => {
+const SignIn = () => {
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
   const navigation = useNavigation();
-  const [inputBackground, setinputBackground] = useState(Color.whitesmoke_100);
-  // // const customFocus = () => {
-  // //   props?.onFocus;
-  // //   setinputBackground(Color.bgFbfbfb);
-  // // }
-  // // const customDisabled = () => {
-  // //   props?.onBlur;
-  // //   setinputBackground(Color.whitesmoke_100);
-  // }
 
   return (
     <View style={[styles.registerActive, styles.registerBg]}>
       <View style={[styles.registerActiveChild, styles.wrapperShadowBox]} />
       <View style={styles.buatAkunmuParent}>
         <Text style={[styles.buatAkunmu, styles.buatPosition]}>
-          Buat Akunmu
+            Ayo Masuk
         </Text>
         <Text style={[styles.buatAkunmuUntuk, styles.buatPosition]}>
-          Buat akunmu untuk membuat rencanan perjalananmu
+            Masukkan akunmu, nikmati rencana perjalananmu
         </Text>
       </View>
       <SafeAreaView>
         <View style = {[styles.formRegister, styles.formRegisterPosition]}>
-          <TextInput style={[styles.namaFocus]}
-            value={nama}
-            onChangeText={text => setNama(text)}
-            placeholder="Masukkan Nama Anda"
-            // // backgroundColor={[inputBackground, props.style]}
-            // onFocus= {customFocus}
-            // onBlur={customDisabled}
-            autoCorrect={false}
-            autoCapitalize={false}
-          />
           <TextInput style={[styles.emailFocus]}
             value={email}
             keyboardType="email-address"
             onChangeText={text => setEmail(text)}
             placeholder="Masukkan Email Anda"
-            // onFocus= {customFocus}
-            // onBlur={customDisabled}
           />
           <TextInput style={[styles.passwordFocus]}
             value={password}
             onChangeText={text => setPassword(text)}
             secureTextEntry={true}
             placeholder="Masukkan Password Anda"
-            // onFocus= {customFocus}
-            // onBlur={customDisabled}
           />
         </View>
       </SafeAreaView>
@@ -64,9 +41,9 @@ const Register = () => {
           <Text style={[styles.text, styles.textFlexBox]}>
             <Text
               style={styles.alreadyHaveAn}
-            >{`Already have an account? `}</Text>
+            >{`Belum Mempunyai Akun? `}</Text>
             <Text style={[styles.loginNow, styles.loginNowTypo]}>
-              Login now
+              Daftar Sekarang
             </Text>
           </Text>
         </Pressable>
@@ -74,7 +51,7 @@ const Register = () => {
           style={[styles.registerWrapper, styles.wrapperSpaceBlock]}
           onPress={() => navigation.navigate("SignIn")}
         >
-          <Text style={[styles.register, styles.loginNowTypo]}>Register</Text>
+          <Text style={[styles.register, styles.loginNowTypo]}>Masuk</Text>
         </Pressable>
       </View>
     </View>
@@ -248,4 +225,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Register;
+export default SignIn;

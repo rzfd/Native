@@ -2,13 +2,14 @@ import * as React from "react";
 import { Text, StyleSheet, View, Image, Pressable } from "react-native";
 import { FontSize, FontFamily, Color, Borders } from "../GlobalStyles.js";
 import { useNavigation } from "@react-navigation/native";
+import { navigationRef } from "../RootNavigation/rootNavigation.js";
+import FrameComponent from "../components/FrameComponent.js";
 
 
 
-
-const spalshScreen = () => {
-  const navigation = useNavigation();
-
+// const SplashScreen = () => {
+//   const navigation = useNavigation();
+function SplashScreen({navigation = useNavigation()}) {
   return (
     <View style={styles.spalshScreen}>
       <View style={styles.createYourAccountToPlanYoParent}>
@@ -24,12 +25,7 @@ const spalshScreen = () => {
         resizeMode="cover"
         source={require("../assets/splash.png")}
       />
-      <Pressable
-        style={[styles.registerWrapper, styles.wrapperSpaceBlock]}
-        onPress={() => navigation.navigate("Registerr")}
-      >
-        <Text style={[styles.register, styles.loginNowTypo]}>Mulai Jelajahi</Text>
-      </Pressable>
+      <FrameComponent/>
     </View>
   );
 };
@@ -103,7 +99,10 @@ const styles = StyleSheet.create({
     wrapperSpaceBlock: {
     flexDirection: "row",
   },
+    loginNowTypo: {
+      fontWeight: "bold",
+    }
 });
 
 
-export default spalshScreen;
+export default SplashScreen;

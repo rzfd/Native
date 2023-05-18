@@ -1,12 +1,11 @@
-const Stack = createNativeStackNavigator();
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 // import Home from "./screens/Home";
-// import SignInInactive from "./screens/SignInInactive";
-// import SignInInactive1 from "./screens/SignInInactive1";
-import Register from "./screen/register";
-import SpalshScreen from "./screen/splashScreen";
+import SignIn from "/Users/User/OneDrive/Dokumen/Kodingding/Native/RPL/screen/SignIn";
+import Register from "/Users/User/OneDrive/Dokumen/Kodingding/Native/RPL/screen/Register";
+import SplashScreen from "/Users/User/OneDrive/Dokumen/Kodingding/Native/RPL/screen/SplashScreen";
 // import Detail from "./screens/Detail";
 // import TipsMendaki from "./screens/TipsMendaki";
 // import Perlengkapan from "./screens/Perlengkapan";
@@ -15,10 +14,9 @@ import SpalshScreen from "./screen/splashScreen";
 // import TrackDetail1 from "./screens/TrackDetail1";
 // import TrackPhotoDetail from "./screens/TrackPhotoDetail";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const [hideSplashScreen, setHideSplashScreen] = React.useState(false);
   const [fontsLoaded, error] = useFonts({
     Poppins_regular: require("/Users/User/OneDrive/Dokumen/Kodingding/Native/RPL/assets/fonts/Poppins_regular.ttf"),
     Poppins_medium: require("/Users/User/OneDrive/Dokumen/Kodingding/Native/RPL/assets/fonts/Poppins_medium.ttf"),
@@ -33,76 +31,22 @@ const App = () => {
   }
 
   return (
-    <>
       <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SignInInactive"
-              component={SignInInactive}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SignInInactive1"
-              component={SignInInactive1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Registerr"
-              component={Register}
-              options={{ headerShown: false }}
-            />
+          <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{headerShown: false}}>
             <Stack.Screen
               name="SplashScreen"
-              component={SpalshScreen}
-              options={{ headerShown: false }}
+              component={SplashScreen}
             />
             <Stack.Screen
-              name="Detail"
-              component={Detail}
-              options={{ headerShown: false }}
+              name="Register"
+              component={Register}
             />
             <Stack.Screen
-              name="TipsMendaki"
-              component={TipsMendaki}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Perlengkapan"
-              component={Perlengkapan}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TipsMendakiDetail"
-              component={TipsMendakiDetail}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TrackDetail"
-              component={TrackDetail}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TrackDetail1"
-              component={TrackDetail1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TrackPhotoDetail"
-              component={TrackPhotoDetail}
-              options={{ headerShown: false }}
+              name="SignIn"
+              component={SignIn}
             />
           </Stack.Navigator>
-        ) : (
-          <SpalshScreen />
-        )}
       </NavigationContainer>
-    </>
   );
 };
 export default App;

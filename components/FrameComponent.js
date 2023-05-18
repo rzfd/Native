@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
+import React, {memo} from "react";
+import { Text, StyleSheet, View, Pressable, TouchableOpacity, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FontSize, FontFamily, Color, Border, Padding } from "../GlobalStyles";
 
@@ -9,9 +9,9 @@ const FrameComponent = memo(() => {
   return (
     <Pressable
       style={styles.startJourneyWrapper}
-      onPress={() => navigation.navigate("register")}
+      onPress={() => navigation.navigate("Register")}
     >
-      <Text style={styles.startJourney}>Start Journey</Text>
+      <Text style={styles.startJourney}>Mulai Aplikasi</Text>
     </Pressable>
   );
 });
@@ -24,13 +24,12 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontFamily: FontFamily.nunitoBold,
     color: Color.bgFbfbfb,
-    textAlign: "left",
+    textAlign: "center",
+    justifyContent: "center",
   },
   startJourneyWrapper: {
     position: "absolute",
-    top: 680,
-    left: 72,
-    // borderRadius: Border.br_8xs,
+    borderRadius: Border.br_8xs,
     backgroundColor: Color.darkslategray_100,
     shadowColor: "rgba(46, 142, 255, 0.2)",
     shadowOffset: {
@@ -42,10 +41,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     width: 216,
     flexDirection: "row",
-    // paddingHorizontal: Padding.p_5xl,
-    // paddingVertical: Padding.p_xl,
+    paddingHorizontal: Padding.p_5xl,
+    paddingVertical: Padding.p_xl,
     alignItems: "center",
     justifyContent: "center",
+    left: 75,
+    top: 670,
   },
 });
 

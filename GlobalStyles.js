@@ -34,7 +34,7 @@ export const Color = {
   gainsboro_100: "#e4e4e4",
 };
 /* Paddings */
-export const Paddings = {
+export const Padding = {
   p_3xs: 10,
   p_base: 16,
   p_5xs: 8,
@@ -42,7 +42,7 @@ export const Paddings = {
   p_xl: 20,
 };
 /* border radiuses */
-export const Borders = {
+export const Border = {
   br_xl: 20,
   br_mini: 15,
   br_8xs: 5,
